@@ -309,11 +309,11 @@ return {
     event = "VeryLazy",
 
     opts = function(_, opts)
-      opts.provider = "deepseek"
+      opts.provider = "deepseek_chat"
 
       opts.providers = opts.providers or {}
 
-      opts.providers.deepseek = {
+      opts.providers.deepseek_reasoner = {
         __inherited_from = "openai",
         endpoint = "https://api.deepseek.com",
         api_key_name = "DEEPSEEK_API_KEY",
@@ -321,6 +321,36 @@ return {
         extra_request_body = {
           temperature = 0,
           max_tokens = 8192,
+        },
+      }
+
+      opts.providers.deepseek_chat = {
+        __inherited_from = "openai",
+        endpoint = "https://api.deepseek.com",
+        api_key_name = "DEEPSEEK_API_KEY",
+        model = "deepseek-chat",
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 8192,
+        },
+      }
+
+      opts.providers.openai = {
+        endpoint = "https://api.openai.com/v1",
+        api_key_name = "OPENAI_API_KEY",
+        model = "gpt-4o",
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 4096,
+        },
+      }
+
+      opts.providers.openai_mini = {
+        __inherited_from = "openai",
+        model = "gpt-4o-mini",
+        extra_request_body = {
+          temperature = 0.2,
+          max_tokens = 2048,
         },
       }
     end,
