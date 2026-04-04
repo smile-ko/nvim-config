@@ -324,7 +324,6 @@ return {
             model = "deepseek-chat",
             display_name = "deepseek/chat",
             api_key_name = "DEEPSEEK_API_KEY",
-            disable_tools = true,
             extra_request_body = {
               temperature = 0,
               max_tokens = 8192,
@@ -336,7 +335,6 @@ return {
             model = "deepseek-reasoner",
             display_name = "deepseek/reasoner",
             api_key_name = "DEEPSEEK_API_KEY",
-            disable_tools = true,
             extra_request_body = {
               temperature = 0,
               max_tokens = 8192,
