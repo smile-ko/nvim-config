@@ -39,6 +39,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.toml" },
     { import = "lazyvim.plugins.extras.lang.yaml" },
     { import = "lazyvim.plugins.extras.lang.cmake" },
+    { import = "lazyvim.plugins.extras.lang.cmake" },
+    { import = "lazyvim.plugins.extras.lang.rust" },
     -- ai coding
     { import = "lazyvim.plugins.extras.ai.copilot" },
     { import = "lazyvim.plugins.extras.ai.avante" },
