@@ -101,13 +101,6 @@ return {
       inlay_hints = { enabled = false },
       servers = {
         cssls = {},
-        tailwindcss = {
-          root_dir = function(fname)
-            local util = require("lspconfig.util")
-
-            return util.root_pattern("package.json", "node_modules", ".git")(fname)
-          end,
-        },
         tsserver = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
