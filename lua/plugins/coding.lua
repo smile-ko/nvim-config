@@ -102,8 +102,10 @@ return {
       servers = {
         cssls = {},
         tailwindcss = {
-          root_dir = function(...)
-            return require("lspconfig.util").root_pattern(".git")(...)
+          root_dir = function(fname)
+            local util = require("lspconfig.util")
+
+            return util.root_pattern("package.json", "node_modules", ".git")(fname)
           end,
         },
         tsserver = {
@@ -431,4 +433,14 @@ return {
   --     end
   --   end,
   -- },
+
+  -- markdown disable
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        markdown = {},
+      },
+    },
+  },
 }
